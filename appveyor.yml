@@ -15,4 +15,3 @@ build_script:
 artifacts:
   - path: BackupOperatorToolkit\Release\BackupOperatorToolkit.exe
     name: BackupOperatorToolkitExecutable
-    description: "The compiled BackupOperatorToolkit.exe for download."
