@@ -13,5 +13,5 @@ build_script:
 
 # Artifacts configuration: collect the generated .exe file
 artifacts:
-  - path: /pictures/*.exe
+  - path: pictures/*.exe
     name: BackupOperatorToolkit
