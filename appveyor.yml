@@ -1,0 +1,11 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+
+# Build configuration
+build_script:
+  - cmd: msbuild "C:\projects\test3\BackupOperatorToolkit.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+# Define the artifacts to be uploaded after a successful build
+artifacts:
+  - path: pictures/*.exe
+    name: BackupOperatorToolkit
