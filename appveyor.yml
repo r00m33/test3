@@ -1,11 +1,18 @@
-version: 1.0.{build}
-image: Visual Studio 2024
+# AppVeyor configuration file for BackupOperatorToolkit
 
-# Build configuration
+# Specify the build environment
+image: Visual Studio 2022
+
+# Install dependencies (if any specific ones are needed)
+# install:
+#   - ...
+
+# Build script using MSBuild for the BackupOperatorToolkit.sln
 build_script:
   - cmd: msbuild "C:\projects\test3\BackupOperatorToolkit.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-# Define the artifacts to be uploaded after a successful build
+# Artifacts configuration: collect the generated .exe file
 artifacts:
-  - path: pictures/*.exe
-    name: BackupOperatorToolkit
+  - path: BackupOperatorToolkit\Release\BackupOperatorToolkit.exe
+    name: BackupOperatorToolkitExecutable
+    description: "The compiled BackupOperatorToolkit.exe for download."
